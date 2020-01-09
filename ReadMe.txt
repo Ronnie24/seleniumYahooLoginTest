@@ -1,4 +1,4 @@
-Email Login, Upload attachment and send testing with Selenium
+Email Login, Upload attachment and send testing with Selenium in eclipse
 
 Upload attachment with AutoIT tool and Extent Report will be creat after testing
 
