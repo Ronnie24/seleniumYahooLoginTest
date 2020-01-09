@@ -1,19 +1,14 @@
 package Utilities;
-
 import java.io.IOException;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 public class EmailPage {
-	
 	public static WebElement element = null;
-
-
+	
 	/**
 	 * Enter username
 	 */
@@ -21,21 +16,17 @@ public class EmailPage {
 		element = driver.findElement(By.xpath("//input[@id='login-username']"));
 		element.sendKeys(username);
 		driver.findElement(By.xpath("//input[@id='login-signin']")).click();
-		
-
 	}
-
+	
 	/**
 	 * Enter password
 	 */
 	public static void enterPassword(WebDriver driver,String password) {
 		element = driver.findElement(By.xpath("//input[@name='password']"));
 		element.sendKeys(password);
-		driver.findElement(By.xpath("//button[@id='login-signin']")).click();
-		
+		driver.findElement(By.xpath("//button[@id='login-signin']")).click();	
 	}
-
-
+	
 	/**
 	 * Check is login successfully
 	 */
@@ -49,33 +40,28 @@ public class EmailPage {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			return false;
-
 		}
-
 		return false;
 	}
-
+	
 	/**
 	 * Click New Letter button
 	 */
 	public static void clickNewLetter(WebDriver driver) {
 		element = driver.findElement(By.xpath("//a[@class='e_dRA l_T cn_dBP cg_FJ k_w r_P A_6EqO u_e69 p_R S_n C_52qC I_ZamTeg D_F H_6VdP gl_C ab_C en_0 M_1Eu7sD ir3_1JO2M7 it3_dRA']"));
 		element.click();
-		
 	}
-
+	
 	/**
 	 * Enter email address and subject
 	 */
 	public static void enterEmailAddress(WebDriver driver,String emailAddress) {
 		element = driver.findElement(By.xpath("//input[@id='message-to-field']"));
 		element.sendKeys(emailAddress);
-		
 		//Enter subject
 		element.findElement(By.xpath("//input[@placeholder='Subject']")).sendKeys("test");;
-		
 	}
-
+	
 	/**
 	 * Upload attachment
 	 * 
@@ -85,7 +71,6 @@ public class EmailPage {
 		// click add attachment button
 		element = driver.findElement(By.xpath("//span[@class='D_X P_3gIMd V_GI O_cMu O4_N I4_2ieea9 O0_N I0_7l9bL ir3_1JO2M7 it3_dRA H_6NIX W_6VdP k_w b_efTvb e_dRA rtlR_h_2gl0WC']"));
 		element.click();
-		
 	}
 
 	/**
@@ -113,5 +98,4 @@ public class EmailPage {
 		}
 		return false;
 	}
-
 }
